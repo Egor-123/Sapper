@@ -1,17 +1,29 @@
 import tkinter as tk
-
 root = tk.Tk()
+
+from tkinter import messagebox
+messagebox.showinfo("Сапёр",)
 
 root.title('Сапёр')
 root.minsize(480,360)
 root.resizable(width = True, height = True)
 
-button_1 = tk.Button(root, width=2, height=1)
-button_1.grid(row=1, column=0)
+#input =
+
+size = 10
 buttons_list = []
-for i in range(10):
-    # Здесь создаём кнопки и помещаем в список buttons_list
-for g in range(# Проходимся по всем кнопкам);
-    # Для каждой кнопки мы делаем grid с необходимами значениями row и column
+#вынести в отдельную функци
+def size():
+    for i in range(size**2):
+        button = tk.Button(root, width=2, height=1)
+        buttons_list.append(button)
+
+for g in range(len(buttons_list)):
+    row_num = g // size + 1
+    column_num  = g % size
+    button = buttons_list[g]
+    button.grid(row=row_num, column=column_num)
+
+
 
 root.mainloop()
