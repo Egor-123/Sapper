@@ -10,11 +10,15 @@ def get_mines_count(game_area_size):
 
 def set_mines_data(game_area_data, mines_count):
     game_area_length = len(game_area_data)
+    i = 1
 
-    for i in range(mines_count):
+    while i <= mines_count:
         random_cell = randint(0, game_area_length - 1)
-        print(random_cell)
-        game_area_data[random_cell] = 'x'
+        is_mine_in_ceil = game_area_data[random_cell] == 'x'
+
+        if not is_mine_in_ceil:
+            game_area_data[random_cell] = 'x'
+            i = i + 1
 
     return game_area_data
 
