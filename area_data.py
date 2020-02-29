@@ -14,10 +14,10 @@ def set_mines_data(game_area_data, mines_count):
 
     while i <= mines_count:
         random_cell = randint(0, game_area_length - 1)
-        is_mine_in_ceil = game_area_data[random_cell] == 'x'
+        is_mine_in_ceil = game_area_data[random_cell] == '☠'
 
         if not is_mine_in_ceil:
-            game_area_data[random_cell] = 'x'
+            game_area_data[random_cell] = '☠'
             i = i + 1
 
     return game_area_data
